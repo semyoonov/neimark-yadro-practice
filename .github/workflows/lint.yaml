@@ -1,7 +1,7 @@
 name: Python Lint
 on:
-  событие:
-    branches: [ имя_ветки ]
+  events:
+    branches: main
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -11,9 +11,9 @@ steps:
     uses: actions/setup-python@v4
     with:
       python-version: '3.11'
-        - name: Install dependencies
+        - name: install dependencies
     run: |
-      pip install имя_линтера
+      pip install flake8
         - name: Run Linter
     run: |
-      имя_линтера task_1/main.py --max-line-length=88
+      flake8 task_1/main.py --max-line-length=88
