@@ -1,1 +1,19 @@
-
+name: Python Lint
+on:
+  событие:
+    branches: [ имя_ветки ]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+steps:
+  - uses: actions/checkout@v4
+  - name: Set up Python
+    uses: actions/setup-python@v4
+    with:
+      python-version: '3.11'
+        - name: Install dependencies
+    run: |
+      pip install имя_линтера
+        - name: Run Linter
+    run: |
+      имя_линтера task_1/main.py --max-line-length=88
